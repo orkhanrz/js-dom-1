@@ -235,6 +235,8 @@ deleteBtn.addEventListener('click', () => {
 	calculatorInput.value = calculatorInput.value.slice(0, -1);
 })
 
+
+
 // ------------------ Task 6 ------------------ //
 const navMenu = document.querySelector('.task-6-inner');
 const navMenuBtn = document.querySelector('.task-6-inner .burger-menu');
@@ -249,3 +251,14 @@ navMenuBtn.addEventListener('click', () => {
 		navMenu.classList.remove('active');
 	}
 })
+
+
+
+// ------------------ Task 11 ------------------ //
+const optionBtn = document.querySelectorAll('.task-11 .optionBtn');
+
+optionBtn.forEach(btn => {
+	btn.addEventListener('click', function(){
+		this.parentElement.classList.toggle('active');
+	});
+});

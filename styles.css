@@ -8,7 +8,7 @@ ul {
 
 a {
 	color: inherit;
-    text-decoration: none;
+	text-decoration: none;
 }
 
 #targetDiv {
@@ -100,7 +100,7 @@ a {
 	height: 3px;
 	width: 100%;
 	background-color: white;
-    transition: all 750ms ease;
+	transition: all 750ms ease;
 }
 
 .burger-menu div:not(:last-child) {
@@ -113,7 +113,7 @@ a {
 }
 
 .task-6-inner.active .burger-menu div:nth-child(2) {
-    translate: -14px 0;
+	translate: -14px 0;
 	opacity: 0;
 }
 
@@ -138,7 +138,7 @@ a {
 }
 
 .task-6-inner li {
-    position: relative;
+	position: relative;
 }
 
 .task-6-inner li a {
@@ -147,19 +147,19 @@ a {
 	justify-content: flex-end;
 	margin: 32px 0;
 	gap: 16px;
-    position: relative;
+	position: relative;
 }
 
 .task-6-inner li i {
 	width: 20px;
 	display: flex;
 	justify-content: center;
-    transition: all 250ms ease;
+	transition: all 250ms ease;
 }
 
 .task-6-inner li i:hover {
-    box-shadow: 0 0 16px white;
-    scale: 0.9;
+	box-shadow: 0 0 16px white;
+	scale: 0.9;
 }
 
 .task-6-inner.active li i {
@@ -186,4 +186,66 @@ a {
 
 .task-6-inner-top h2 {
 	margin: 0;
+}
+
+.task-11 {
+	padding: 32px;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.task-11 h1 {
+	color: darkblue;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.task-11 .select {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+.task-11 .option {
+	background-color: white;
+	padding: 0 32px;
+	margin-bottom: 4px;
+}
+
+.task-11 .optionText {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 250ms ease;
+}
+
+.task-11 .option p {
+	padding: 0 0 32px 0;
+	margin: 0;
+}
+
+.task-11 .option.active .optionBtn{
+	color: darkblue;
+}
+
+.task-11 .option.active .optionBtn i {
+	rotate: 90deg;
+}
+
+.task-11 .option.active .optionText {
+	max-height: 200px;
+}
+
+.task-11 .optionBtn {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	cursor: pointer;
+}
+
+.task-11 .optionBtn i {
+	font-weight: 900;
+	transition: rotate 250ms ease;
+}
+
+.task-11 .optionBtn h3 {
+	font-size: 24px;
 }
