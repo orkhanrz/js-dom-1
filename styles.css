@@ -188,6 +188,205 @@ a {
 	margin: 0;
 }
 
+/* Task 9 */
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalInner {
+	background-color: white;
+	text-align: center;
+	padding: 32px;
+}
+
+.modalInner h2 {
+	font-size: 24px;
+}
+
+.modalInner p {
+	font-size: 18px;
+}
+
+.modal.sketch {
+	animation: sketchModal 500ms linear;
+}
+
+.modal.sketch .modalInner {
+	animation: sketchInner 500ms linear;
+	min-width: 250px;
+	min-height: 100px;
+}
+
+.modal.sketch .modalInner h2, .modal.sketch .modalInner p {
+	animation: sketchText 500ms linear;
+} 
+
+.modal.bond {
+	animation: bondModal 5s linear;
+}
+
+.modal.bond .modalInner {
+	animation: bondInner 5s linear;
+}
+
+/* .modal.bond .modalInner h2, .modal.bond .modalInner p {
+	
+} */
+
+@keyframes sketchModal {
+	from {
+		background-color: white;
+	}
+
+	to {
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+}
+
+@keyframes sketchInner {
+	0% {
+		background-color: transparent;
+		border-top: 2px solid white;
+		border-right: none;
+		border-bottom: none;
+		border-left: none;
+	}
+
+	25% {
+		background-color: transparent;
+		border-top: 2px solid white;
+		border-right: 2px solid white;
+		border-bottom: none;
+		border-left: none;
+	}
+
+	50% {
+		background-color: transparent;
+		border-top: 2px solid white;
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
+		border-left: none;
+	}
+
+	75% {
+		background-color: transparent;
+		border-top: 2px solid white;
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
+		border-left: 2px solid white;
+	}
+
+	100% {
+		background-color: white;
+		border-top: 2px solid white;
+		border-right: 2px solid white;
+		border-bottom: 2px solid white;
+		border-left: 2px solid white;
+	}
+}
+
+@keyframes sketchText {
+	from {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes bondModal {
+	0% {
+		background-color: rgba(255, 255, 255, 1);
+	}
+
+	20% {
+		background-color: rgba(0, 0, 0, .5);
+	}
+
+	40% {
+		background-color: rgba(0, 0, 0, .5);
+	}
+
+	60% {
+		background-color: rgba(255, 0, 0, .75);
+	}
+
+	80% {
+		background-color: rgba(255, 0, 0, .75);
+	}
+
+	100% {
+		background-color: transparent;
+	}
+}
+
+@keyframes bondInner {
+	0% {
+		width: 100px;
+		height: 100px;
+		translate: 100% 0;
+		border-radius: 50%;
+		opacity: 1;
+		rotate: 0;
+	}
+
+	20% {
+		width: 100px;
+		height: 100px;
+		translate: 0 0;
+		border-radius: 50%;
+		opacity: 1;
+		rotate: 0;
+	}
+
+	40% {
+		width: 250px;
+		height: 100px;
+		translate: 0 0;
+		border-radius: initial;
+		opacity: 1;
+		rotate: 0;
+	}
+
+	60% {
+		width: 250px;
+		height: 150px;
+		translate: 0 0;
+		border-radius: initial;
+		opacity: 0;
+		rotate: 0;
+	}
+
+	80% {
+		width: 250px;
+		height: 150px;
+		translate: 0 100vh;
+		border-radius: initial;
+		opacity: 0;
+		rotate: 0;
+	}
+
+	100% {
+		width: 250px;
+		height: 150px;
+		translate: 0 100vh;
+		border-radius: initial;
+		opacity: 0;
+		rotate: 45deg;
+	}
+}
+
 .task-11 {
 	padding: 32px;
 	background-color: rgba(0, 0, 0, 0.05);
@@ -222,7 +421,7 @@ a {
 	margin: 0;
 }
 
-.task-11 .option.active .optionBtn{
+.task-11 .option.active .optionBtn {
 	color: darkblue;
 }
 

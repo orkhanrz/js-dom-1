@@ -100,7 +100,7 @@ const operations = document.querySelectorAll(".operation");
 const calculatorInput = document.querySelector("#calculatorInput");
 const clearInputBtn = document.querySelector("#clearInput");
 const equalsBtn = document.querySelector("#equals");
-const deleteBtn = document.querySelector('#delete');
+const deleteBtn = document.querySelector("#delete");
 let inputMaxLength = 8;
 let inputFontSize = 40;
 
@@ -203,7 +203,8 @@ document.querySelectorAll(".inputBtn").forEach((btn) => {
 		if (this.classList.value.includes("operation")) {
 			if (
 				calculatorInput.value.length === 0 ||
-				calculatorInput.value[calculatorInput.value.length - 1] === this.innerText
+				calculatorInput.value[calculatorInput.value.length - 1] ===
+					this.innerText
 			) {
 				return;
 			}
@@ -231,34 +232,67 @@ clearInputBtn.addEventListener("click", () => {
 	calculatorInput.value = "";
 });
 
-deleteBtn.addEventListener('click', () => {
+deleteBtn.addEventListener("click", () => {
 	calculatorInput.value = calculatorInput.value.slice(0, -1);
-})
-
-
+});
 
 // ------------------ Task 6 ------------------ //
-const navMenu = document.querySelector('.task-6-inner');
-const navMenuBtn = document.querySelector('.task-6-inner .burger-menu');
+const navMenu = document.querySelector(".task-6-inner");
+const navMenuBtn = document.querySelector(".task-6-inner .burger-menu");
 let navMenuStatus = false;
 
-navMenuBtn.addEventListener('click', () => {
+navMenuBtn.addEventListener("click", () => {
 	navMenuStatus = !navMenuStatus;
 
-	if (navMenuStatus){
-		navMenu.classList.add('active')
+	if (navMenuStatus) {
+		navMenu.classList.add("active");
 	} else {
-		navMenu.classList.remove('active');
+		navMenu.classList.remove("active");
 	}
-})
+});
 
+// ------------------ Task 9 ------------------ //
+function renderModal(animation, time, end) {
+	const modal = document.createElement("div");
+	const modalInner = document.createElement("div");
+	const modalHead = document.createElement("h2");
+	const modalText = document.createElement("p");
 
+	modal.classList.add("modal");
+	modalInner.classList.add("modalInner");
+
+	modalHead.textContent = "I'm a modal";
+	modalText.textContent = "Hear me roar";
+
+	modal.appendChild(modalInner);
+	document.body.appendChild(modal);
+
+	modal.classList.add(animation);
+
+	setTimeout(() => {
+		modalInner.appendChild(modalHead);
+		modalInner.appendChild(modalText);
+	}, time);
+
+	setTimeout(() => {
+		modal.remove();
+	}, end);
+}
+
+sketchBtn.addEventListener("click", function () {
+	renderModal('sketch', 500, 1500);
+});
+
+// ------------------ Task 10 ------------------ //
+bondBtn.addEventListener("click", function () {
+	renderModal('bond', 1000, 5500);
+});
 
 // ------------------ Task 11 ------------------ //
-const optionBtn = document.querySelectorAll('.task-11 .optionBtn');
+const optionBtn = document.querySelectorAll(".task-11 .optionBtn");
 
-optionBtn.forEach(btn => {
-	btn.addEventListener('click', function(){
-		this.parentElement.classList.toggle('active');
+optionBtn.forEach((btn) => {
+	btn.addEventListener("click", function () {
+		this.parentElement.classList.toggle("active");
 	});
 });
